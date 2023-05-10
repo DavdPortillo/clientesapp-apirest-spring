@@ -34,7 +34,7 @@ public class ClientController {
     }
     
     @GetMapping("{id}")
-    public Client getById(@PathVariable("id") long id) {
+    public Client getById(@PathVariable("id") Long id) {
 	return clientService.findById(id);
 	
     }
@@ -46,11 +46,10 @@ public class ClientController {
 	return client;
     }
     
-    @PutMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public Client editClient(@RequestBody Client client) {
-	clientService.addClient(client);
-	return client;
+    @PutMapping()
+    @ResponseStatus(HttpStatus.OK)
+    public Client editeAlbum(@RequestBody Client client) {
+	return clientService.addClient(client);
     }
     
     @DeleteMapping("{id}")

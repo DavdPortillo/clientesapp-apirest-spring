@@ -10,12 +10,13 @@ import com.api.entity.Client;
 @Service
 public interface IClientService {
 
-    void addClient(Client client);
+    Client addClient(Client client);
 
     void deleteClient(Long id);
 
     List<Client> findAll();
     
     Client findById(Long id);
+    
 
 }

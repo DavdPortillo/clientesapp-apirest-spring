@@ -18,8 +18,8 @@ public class ClientService implements IClientService {
 
     @Override
     @Transactional
-    public void addClient(Client client) {
-	clientRepository.save(client);
+    public Client addClient(Client client) {
+	return clientRepository.save(client);
     }
 
     @Override
@@ -39,4 +39,5 @@ public class ClientService implements IClientService {
     public Client findById(Long id) {
 	return clientRepository.findById(id).orElse(null);
     }
+
 }
